@@ -1,26 +1,25 @@
-import { useState } from 'react'
+import React from 'react'
+import HeroCover from './components/HeroCover'
+import SummaryCards from './components/SummaryCards'
+import DailyPnLHeatmap from './components/DailyPnLHeatmap'
+import ChartsPanel from './components/ChartsPanel'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-gray-900">
+      <HeroCover />
+
+      <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+        <SummaryCards />
+        <ChartsPanel />
+        <DailyPnLHeatmap />
+
+        <section className="text-center text-xs text-gray-500">
+          <p>
+            Mock data shown. Backend integration with MEXC and secure API key storage will be added in the next step.
+          </p>
+        </section>
+      </main>
     </div>
   )
 }
